@@ -2,28 +2,41 @@ package co.edu.uniquindio.poo;
 
 public class Recursividad {
 
-    public static void main(String[] args) {
-        // Alternativa - Estrategia - Enfoque
-        int [] arreglo = {1,2,3,4,5};
-        //recorrerIterativo(arreglo);
-        recorrerRecursiva(arreglo,4);
-        //hacer un metodo recursivo que busque un numero
-        // en un arreglo si existe dice true y sino false
-
-        int mayor = obtenerMayorRecursivo(arreglo,0,0);
-
-        int[] numeros = {4, 8, 15, 16, 23, 42};
-
-        System.out.println(buscar(numeros, 15, 0)); // true
-        System.out.println(buscar(numeros, 99, 0)); // false
-        //imprime el 1
-        //imprime nada
-        //imprime 2345
-        //imprime 54321
-        //imprime 5
-        //imprime 2
-        //imprime 23456
+    static void main() {
+        int arreglo[] = {1,2,3,4,5};
+        int suma = sumaDivide(arreglo,0,arreglo.length-1);
+        System.out.println(suma);
     }
+    public static int sumaDivide(int[] arreglo,int inicio, int fin ){
+        if(inicio == fin){
+            return arreglo[inicio];
+        }
+        int mitad = ( inicio + fin )/2;
+        int sumIzq = sumaDivide(arreglo,inicio,mitad);
+        int sumder = sumaDivide(arreglo,mitad + 1,fin);
+        return sumIzq + sumder;
+    }
+
+    public static int binarySearch(int[] arreglo,int inicio, int fin, int buscado ){
+        if(inicio > fin){
+            return -1;
+        }
+        int mitad = ( inicio + fin )/2;
+
+        if(arreglo[mitad] == buscado){
+            return mitad;
+        }
+
+        return buscado > arreglo[mitad]
+                ? binarySearch(arreglo,mitad+1,fin,buscado)
+                : binarySearch(arreglo,inicio,mitad-1,buscado);
+
+
+    }
+
+
+
+
 
     private static void recorrerIterativo(int[] arreglo) {
         //1. Valor inicial int i = 0
@@ -74,7 +87,6 @@ public class Recursividad {
     }
 
     public static int obtenerMayorIterivo(int[] arreglo) {
-
         int mayor = 0;
         for (int i = 0; i < arreglo.length; i++) {
             if(arreglo[i] > mayor) {
@@ -83,6 +95,19 @@ public class Recursividad {
         }
         return mayor;
     }
+
+    //int[] numeros = {2, 3, 1, 6}
+
+
+    // 4
+    //18
+    //14
+
+
+
+
+
+
 
 
 
