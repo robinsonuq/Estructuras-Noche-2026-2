@@ -1,11 +1,17 @@
 package co.edu.uniquindio.poo.collections;
 
-public class Cliente {
+import java.util.Objects;
+
+public class Cliente implements Comparable<Cliente> {
 
     private String nombre;
+    private String identificacion;
+    private int edad;
 
-    public Cliente(String nombre) {
+    public Cliente(String nombre,String identificacion,int edad) {
         this.nombre = nombre;
+        this.identificacion = identificacion;
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -14,5 +20,42 @@ public class Cliente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(identificacion, cliente.identificacion);
+    }
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( identificacion);
+    }
+
+    @Override
+    public int compareTo(Cliente o) {
+        //0 si sn iguales
+        //- si es menor
+        //+ si es mayor
+
+        return this.edad-o.getEdad();
     }
 }
