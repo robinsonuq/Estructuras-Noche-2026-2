@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.genericos;
 
+import co.edu.uniquindio.poo.carrito.Producto;
+
 import java.util.ArrayList;
 
 public class Genericos {
@@ -9,10 +11,7 @@ public class Genericos {
        // usted creo una clase que la va a usar otra persona del proyecto
 
         Bodega<Producto> bodega1 = new Bodega<>();
-        bodega1.guardar(new Carro());
-        bodega1.guardar(new Carro());
-        bodega1.guardar(new Carro());
-        bodega1.guardar(new Carro());
+
 
         bodega1.sacar(0);
 

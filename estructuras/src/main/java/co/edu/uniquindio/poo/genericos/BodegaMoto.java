@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.genericos;
 
+import co.edu.uniquindio.poo.carrito.Moto;
+
 import java.util.ArrayList;
 
 public class BodegaMoto {
@@ -19,11 +21,11 @@ public class BodegaMoto {
         this.codigo = codigo;
     }
 
-    public ArrayList<Producto> getListaProductos() {
+    public ArrayList<Moto> getListaProductos() {
         return listaProductos;
     }
 
-    public void setListaProductos(ArrayList<Producto> listaProductos) {
+    public void setListaProductos(ArrayList<Moto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 
