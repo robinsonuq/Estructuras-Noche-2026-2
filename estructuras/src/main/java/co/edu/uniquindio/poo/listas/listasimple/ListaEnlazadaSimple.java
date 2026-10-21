@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.listas.listasimple;
 public class ListaEnlazadaSimple {
 
     private int size;
-    private Nodo nodoPrimero;
+    private Nodo<T> nodoPrimero;
 
     public ListaEnlazadaSimple() {
         size = 0;
@@ -20,7 +20,7 @@ public class ListaEnlazadaSimple {
 
     // 1. agregar al inicio
     public void addFirst(int dato){
-        Nodo nuevoNodo = new Nodo(dato);
+        Nodo<T> nuevoNodo = new Nodo<T>(dato);
         if(isEmpty()){
             nodoPrimero = nuevoNodo;
         }else{
@@ -31,11 +31,11 @@ public class ListaEnlazadaSimple {
     }
     // 2. agregar al final
     public void addLast(int dato){
-        Nodo nuevoNodo = new Nodo(dato);
+        Nodo<T> nuevoNodo = new Nodo<T>(dato);
         if(isEmpty()){
             nodoPrimero = nuevoNodo;
         }else{
-            Nodo auxiliar = nodoPrimero;//inicializacion
+            Nodo<T> auxiliar = nodoPrimero;//inicializacion
             while(auxiliar.getSiguiente() != null){// condicion parada y ciclo
                 auxiliar = auxiliar.getSiguiente();//incremento
             }
@@ -50,7 +50,7 @@ public class ListaEnlazadaSimple {
 
 
     public void imprimir() {
-        Nodo auxiliar = nodoPrimero;//inicializacion
+        Nodo<T> auxiliar = nodoPrimero;//inicializacion
         while(auxiliar != null){// condicion parada y ciclo
             System.out.print(auxiliar.getDato()+" -> ");// instrucciones que se repiten
             auxiliar = auxiliar.getSiguiente();//incremento
@@ -58,7 +58,7 @@ public class ListaEnlazadaSimple {
     }
     public void imprimir2() {
         // i = 0  ; i < lista.size; i++
-        for(Nodo auxiliar = nodoPrimero; auxiliar != null; auxiliar = auxiliar.getSiguiente()){
+        for(Nodo<T> auxiliar = nodoPrimero; auxiliar != null; auxiliar = auxiliar.getSiguiente()){
             // inicializacion, condicion parada, incremento, ciclo, instrucciones que se repiten
             System.out.print(auxiliar.getDato()+" -> ");
         }
@@ -74,7 +74,7 @@ public class ListaEnlazadaSimple {
         imprimir3(nodoPrimero);//inicializacion
     }
 
-    private void imprimir3(Nodo aux ) {
+    private void imprimir3(Nodo<T> aux ) {
         if(aux == null){// condicion parada
             return;
         }else {
