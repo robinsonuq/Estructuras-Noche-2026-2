@@ -23,7 +23,7 @@ public class Main {
 
         listaEnlazadaSimple.imprimir3();
 
-        listaEnlazadaSimple.addLast();
+
 
     }
 }

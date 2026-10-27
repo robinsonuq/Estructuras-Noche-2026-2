@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.listas.listasimple;
 
-public class ListaEnlazadaSimpleMejorada {
+public class ListaEnlazadaSimpleMejorada<T> {
 
     private int size;
     private Nodo<T> nodoPrimero;

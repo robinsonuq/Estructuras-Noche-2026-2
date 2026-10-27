@@ -38,18 +38,7 @@ public class Bicola<T> {
         }
         size++;
     }
-    // 1. agregar al inicio
-    public void encolarInicioFirst(int dato){
-        co.edu.uniquindio.poo.listas.listasimple.Nodo<T> nuevoNodo = new co.edu.uniquindio.poo.listas.listasimple.Nodo<T>(dato);
-        if(isEmpty()){
-            nodoUltimo = nuevoNodo;
-            nodoPrimero = nuevoNodo;
-        }else{
-            nuevoNodo.setSiguiente(nodoPrimero);
-            nodoPrimero = nuevoNodo;
-        }
-        size++;
-    }
+
     // 2. eliminar al inicio de la cola
     public T desencolar(){
         if(isEmpty()){
